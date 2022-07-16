@@ -74,5 +74,45 @@
         <a class="hover-fx"><i class="fab fa-linkedin fa-2x"></i></a>
         <a class="hover-fx"><i class="fab fa-github fa-2x"></i></a>
     </section>
-</body>
+    <hr>
+    <section class="left-section">Exemplo4</section>
+    <div class="main"><!-- https://www.instagram.com/reel/CgE3Bqwjf0N/ -->
+        <h1>Olá. Eu sou o Silvio Júnior - silviobsjunior</h1>
+        <p>Estou aprendendo HTML com CSS e estes são alguns exemplos retirados do Instagram.</p>
+        <p>Uma semana Dev foi feito pela EBAC, onde foi possível criar um curriculo e disponibilizar no Github.</p>
+        <h3>Aprenda uma linguagem de programação também.</h3>
+    </div>
+    <hr>
+    <section class="left-section">Exemplo5</section>
+    <button onclick="getUserLocation()">Pegar localização do Usuário</button>
+    <div><!-- https://www.instagram.com/p/Cf6KOZyDhPV -->
+        <p id="res"></p>
+        <script>
+            var res = getElementById("res");
+            function getUserLocation() {
+                if (navigator.geolocation) navigator.geolocation.getCurrentPosition(success, error);
+                else res.innerHTML = "Geolocalização não é suportado por este Browser!";
+            }
+            function error(error) {
+                res.innerHTML = "Error <br> Code => " + error.code + "<br>" +
+                "Message => " + error.message;
+            }
+            function success(position) {
+                var coords = position.coords;
+                var txt = "";
+                //Sempre retorna
+                txt = txt + " latitude : " + coords.latitude + "<br>";
+                txt = txt + " longitude : " + coords.longitude + "<br>";
+                txt = txt + " accuracy : " + coords.accuracy + "<br>";
+                //Retorna somente se disponível
+                txt = txt + " altitude : " + coords.altitude + "<br>";
+                txt = txt + " altitudeAccuracy : " + coords.altitudeAccuracy + "<br>";
+                txt = txt + " heading : " + coords.heading + "<br>";
+                txt = txt + " speed : " + coords.speed + "<br>";
+                txt = txt + " timestamp : " + coords.timestamp + "<br>";
+                res.innerHTML = txt;
+            }
+        </script>
+    </div>
+ </body>
 </html>
